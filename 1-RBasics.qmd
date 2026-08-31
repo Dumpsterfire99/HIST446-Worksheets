@@ -1,7 +1,7 @@
 ---
 title: "Worksheet 1: R Basics"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "8/31/26"
 format:
   html:
     df-print: paged
@@ -34,10 +34,16 @@ Numbers can be used to do arithmetic.
 5 + 5
 ```
 
-(@) You try, multiple two numbers. 
+() You try, multiple two numbers. 
+```{r}
+8 + 9
+```
 
 
 (@) Can you multiply two numbers and then divide by the result? 
+```{r}
+(7 * 8) / 56
+```
 
 The next type of value is a **string**. Strings are lines of text. Sometimes these are referred to as character vectors. To create a string, you add text between two quotation marks. For example: 
 ```{r}
@@ -46,7 +52,7 @@ The next type of value is a **string**. Strings are lines of text. Sometimes the
 
 (@) Try to create your own string.
 ```{r}
-
+"Its still the gulf of Mexico"
 ```
 
 You can't add strings using `+` like you can numbers. But there is a function called `paste()` which concatenates character vectors into one. This function is _very_ useful and one you'll use a lot in a variety of circumstances. Here's what that looks like: 
@@ -57,12 +63,12 @@ paste("Hello", "Ball State Students")
 
 (@) Try it, add two strings together like the above example. 
 ```{r}
-
+paste("wow","look at me code lol")
 ```
 
 (@) Can you explain what happened in 2-3 sentences? 
 
-> 
+> what is happening is that we are making messsages pop up. as well as we are having math and numbers be done, but thats that is just the tools that we are using. these are tools that are being used to make what we need possable, as we are putting in what we need and having a function do what we need by imputing the commands in a way that they will run. 
 
 The last type are **logical** values like `TRUE` and `FALSE`. (Note that these are all caps.)
 
@@ -102,15 +108,18 @@ Logical Operators allow you to combine or change the results of comparisons.
 ```
 (@) Explain, what does the code on each line above do? 
 
->
+> Each one os a diffrent meaning/code if two numbers are less than equal to or all of the diffrent codes it to use logic. 5 is not equal to 10, but 5 is equal to 5. It uses logic to compare the numerical value of the number. 
 
 (@) Create your own comparison. 
 ```{r}
-
+6 < 9
+10 == 5 * 2
+0 != 7
 ```
 
 (@) Can you write code that checks if a year is between 1970 AND 1980? 
 ```{r}
+1975 >= 1970 & 1975 <= 1980
 
 ```
 
@@ -147,13 +156,13 @@ Whatever you prefer, be consistent and your future self will thank you when your
 (@) You try, create a variable and assign it a number: 
 
 ```{r}
-
+this_is_my_num <- 25
 ```
 
 (@) Can you assign a string to a variable?
 
 ```{r}
-
+x <- "i am a string"
 ```
 
 Once we've assigned a variable we can use that variable to run calculations just like we did with raw numbers.
@@ -171,26 +180,33 @@ R can also handle more complex equations.
 And we could store the output of a calculation in a new variable:
 ```{r}
 My.Calculation <- (x + x)*10
+print(My.Calculation)
 ```
 
 (@) You try. Assign a number to x and a number to y. Add those two numbers together.
 ```{r}
-
+x <- 10
+y <- 8
+z <- x + y
 ```
 
 (@) Can you take `x` and `y` and multiply the result by 5? 
 ```{r}
-
+p <- z * 5
 ```
 
 (@) Try creating two variables with names other than `x ` and `y`. Descriptive names tend to be more useful. Can you multiply the contents of your variables? 
 ```{r}
-
+grade1 <- 70
+grade4 <- 50
+grade1_times_grade4 <- grade1 * grade4
 ```
 
 (@) Try creating two variables that store strings. Can you concatenate those two variables together? 
 ```{r}
-
+string1 <- "this is"
+string2 <- "a string"
+string3 <- paste(string1,string2)
 ```
 
 ### Vectors
@@ -225,7 +241,7 @@ my.numbers * 2
 ```
 (@) Explain in a few sentences, what happened in the code above?
 
->
+> The vector my.numbers was multiplied by 2 and produced an output for each value in the vector.
 
 Lets try something slightly different. 
 ```{r}
@@ -233,11 +249,12 @@ my.numbers[3] * 2
 ```
 (@) Explain in a few sentences, what happened in the code above? 
 
->
+>We only multiplied 6 by 2 because 6 is the third number in the vector.
 
 (@) You try, create a list of five items and store it in a descriptive variable. 
 ```{r}
-
+my_personal_vector <- c(4,6,10,14,16)
+my_personal_vector
 ```
 
 
@@ -269,14 +286,17 @@ We can ask R to pull up the documentation like this:
 
 (@) Now you try, find the documentation for the function  `signif()`.
 ```{r}
-
+?signif()
 ```
 
 In real life, you typically you wouldn't want to store this code in your script file. You probably don't need to pull up the documentation for the function every time you run that piece of code. But for the purposes of this worksheet we're adding it to our `.qmd` document. 
 
 (@) Use the console to find the documentation for `floor()`? Try it and then tell me, what does that function do? 
 
->
+>floor takes a single numeric argument x and returns a numeric vector containing the largest integers not greater than the corresponding elements of x.
+```{r}
+?floor()
+```
 
 ### Data Frames & Packages
 
@@ -314,7 +334,7 @@ What is going on here? Each line within this function (x,y,z) creates a new colu
 
 (@) What is going on in row z? Can you explain the logic here?
 
->
+>Each number 1-5 which is x is being multiplied by 2 and then added to y which is 1, and that is where the z value comes to be. 
 
 
 ## Loading Dataframes from Packages
@@ -346,9 +366,9 @@ What kind of datasets are available in this package? We can use the help documen
 
 Run `help(package="DigitalMethodsData")` in your console to pull up a list of datasets included in this package. 
 
-For demonstration purposes we'll use the `gayguides` data here. Pull up the help documentation for this dataset. What does the documentation tell you abou the scope of this dataset? 
+For demonstration purposes we'll use the `gayguides` data here. Pull up the help documentation for this dataset. What does the documentation tell you about the scope of this dataset? 
 
->
+>This dataset contains information transcribed from Bob Damron's Address Books from 1965 through 1985. Last updated December 2022. this is what the dataset is.
 
 To use a dataset included in this package we first need to load it. We can do so like this:
 
@@ -370,17 +390,17 @@ That gives us the first 6 rows of data. Its really useful if you just want to pe
 
 (@) The default is to print six rows of data. Can you modify the above code to print out the first 10 rows? 
 ```{r}
-
+head(gayguides, n = 10L)
 ```
 
 (@) Can you find the last 6 rows of data? 
 ```{r}
-
+tail(gayguides)
 ```
 
 (@) Reflect on the previous two prompts. How did you figure these out? 
 
->
+>I Read the documentation, and also used the command that let me ask what a function does. I was then told about head and tail. 
 
 The `str()` function is another very useful function for understanding a dataset. It compactly displays the internal structure of an R object. 
 ```{r}
@@ -399,28 +419,28 @@ gayguides$title[500]
 
 (@) Break this down. Whats going on here? What do each of the elements of this code mean? (gayguides, $, title, and [500]) 
 
->
+>gayguides is the dataset, $ and title is the data segment, 500 is the 500th title. 
 
 (@) The Year variable contains the year (numeric) of each entry. Can you find the earliest year in this dataset? (Using code, don't cheat and use the documentation!)
 ```{r}
-
+min(gayguides$Year)
 ```
 
 
 (@) How about the latest year? 
 ```{r}
-
+max(gayguides$Year)
 ```
 
 
 (@) Add another dataset from `DigitalMethodsData`. How many observations are included in this dataset? Run through some of the examples from above to learn about the dataset.
 ```{r}
-
+help(package="DigitalMethodsData")
 ```
 
 (@) What did you learn about the dataset? What can you tell me about it? 
 
->
+>It seems to me that there is data here that tells about the judges and a bit about them. Their positions, and what they did and I saw some things about military service. Seems a little poorly formated.
 
 
 
