@@ -1,7 +1,7 @@
 ---
 title: "Worksheet 2: Data Structures"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "9/20/26"
 format:
   html:
     df-print: paged
@@ -83,7 +83,8 @@ x[c(3,3)]
 ```
 (@) Create your own vector and return three values using the subsetting method above. 
 ```{r}
-
+z <- c(8,6,4,2,10,14,18)
+z[c(1,5)]
 ```
 
 
@@ -94,7 +95,7 @@ x[-c(3, 1)]
 
 (@) What happened here? Describe this in your own words. 
 
->
+>What happened here is that when -c you are taking awa numbers 3, and 1 from the vector and displaying the rest. So in this case what was taken away was the 2 and the 15.4, and so you are subrtacting those numbers and getting everything else. 
 
 You can use either positive or negative integers to subset a vector but you **cannot mix the two**.
 
@@ -111,7 +112,8 @@ x[x > 7]
 
 (@) What is going on in each of the lines above? Describe it in your own words. 
 
->
+>In the first line with the true and false it is labaling each of the numbers in ordwe without having to give a value and just going by order. So what is happening is that it is logicaly and maually saying what is true and false and then displayed the true numbers. 
+On the second line we are only displaying the numbers that are true to what it is asking. Like if 2 was put down and it say that 2 > 7 that is false as 2 is not greater than 7. so it only displayed the numbers that were greater and true. 
 
 Nothing returns the original vector. This isn't that useful here but can come in handy when you have more complex structures like matrices and arrays. 
 ```{r}
@@ -124,7 +126,7 @@ If your vector is named, you can also use character vectors to return elements w
 y[c("d")]
 ```
 (@) What happened here? Explain this in your own words. 
-
+So from what I am understanding, it is taking the numbers in the vector that is x and they are naming them spesifically in the vector a-d. They are only doing those specifically as, as the ones with NA are not named. 
 #### Matrices
 
 We can subset higher dimensional structures, like matrices, too. First lets define a matrix. In R, **a matrix** is a collection of elements of the same data type (numeric, character, or logical) arranged into a fixed number of rows and columns. Since you are only working with rows and columns, a matrix is called two dimensional. To create a matrix you can use the `matrix()` function.
@@ -142,12 +144,12 @@ In the `matrix()` function:
 
 (@) You try now, create a matrix that had five rows with numbers that range from 25 to 49. 
 ```{r}
-
+matrix(25:49, byrow = FALSE, nrow = 5)
 ```
 
 (@) Can you create a matrix that has 3 rows with only even numbers from 2 to 18? 
 ```{r}
-
+matrix(2:18, byrow = FALSE, nrow = 3)
 ```
 
 ##### Subsetting Matricies 
@@ -199,25 +201,25 @@ gayguides[1:3,]
 
 (@) Why is this different? What do we get compared to the previous example? 
 
->
+>Wehave more information to work with, as there are discriptions, street adresses and many other varables. the other examples are just numbers that we are using to explain the process, where as here we actual charts and much more information. In the gayguides they have the citys and the type there is so much more here to work with. 
 
 (@) Can you find just the city and state for the first 5 entries? 
 ```{r}
-
+gayguides[1:5,8:9]
 ```
 
 (@) How about the street address and type for rows 2,555 to 2,560?
 
 ```{r}
-
+gayguides[2555:2560, 5:6]
 ```
 
 (@) Load another dataset from `DigitalMethodsData`. Subset it to find some element of the data. Write the code below and then explain what element of the data you wanted to subset and why:
 ```{r}
-
+BostonWomenVoters[1:8,11:12]
 ```
 
-> 
+> I made the choice of Bostonwomenvoters from the data sets. I made this cjoice because, of the move for women to vote and to see the data of this. When it came to selecting the subsets that I wanted to be shown I i thought of age and country of birtha dn wanted to see the first 8 rows and see who was voing and their age. I was suprised when the first woman at the number 1 spot was french!
 
 Another useful operator to know is `$` which we used a little bit in the previous worksheet. `$` is shorthand for accessing a variable in a dataframe. 
  
@@ -234,11 +236,11 @@ gayguides$city[100:110]
 
 (@) What does this code do? 
 
->
+>It created a row 7 and a row 1, and it is giving the city names from row 100 to row 110. Bu using the $ command as well you are singiling out that varible.
 
 (@) Can you find all the titles of locations in South Carolina? (Hint: You'll need to use both `$` and `[]`)
 ```{r}
-
+gayguides$title[32275]
 ```
 
 We can also use `$` to create a new column in `gayguides`. 
@@ -273,48 +275,45 @@ Stick with `%>%` in your worksheets so your code matches the examples. But when 
 
 (@) Use the pipe to subset the gayguides data to get the title column, then look at the first 20 entries.
 ```{r}
+gayguides$title[1:20]
 ```
-
-## Putting It All Together: Historical Data Challenges
-
-Now that you've learned about subsetting vectors, matrices, and data frames, let's apply these skills to historical datasets. These challenges will require you to combine multiple techniques. These are meant to be challenging, remember the goal is to try not to get each one perfect. Document your struggles and any resources you use in your logs for the week.
-
-### Challenge 1: Temporal Analysis of LGBTQ Spaces
-
-(@) Using the `gayguides` data, find all locations in California during the 1970s (1970-1979). 
-Hint: Break this into steps:
-   - Step 1: Create a logical vector that identifies California locations
-   - Step 2: Create a logical vector that identifies 1970s dates
-   - Step 3: Combine these conditions
-   - Step 4: Use this combined condition to subset the data
-```{r}
-
-```
+ 
 
 (@) The `amenityfeatures` column contains codes about each location. Can you find all entries that mention "(G)" for girls/women anywhere in their amenity features during 1975? How many locations specifically catered to women that year?
 ```{r}
+result <- gayguides[grepl("(G)", gayguides$amenityfeatures) & gayguides$Year == 1975, ]; print(result)
+```
 # Hint: You'll need to search within the amenityfeatures text
 # The str_detect() function might be useful, or you could use grepl()
-```
-
 ### Challenge 2: Boston Women Voters
-
+```
 Load the Boston Women Voters dataset and use subsetting to answer these historical questions:
+
 ```{r}
+
+```
 
 ```
 
 (@) Find all women voters who were over 50 years old. Then find all the voters who were under the age of 50. How many were there? What can you say about the age distribution of women voters?
 ```{r}
+result <- BostonWomenVoters[BostonWomenVoters$Age > 50, ]; print(nrow(result)); result <- BostonWomenVoters[BostonWomenVoters$Age < 50, ]; print(nrow(result))
 ```
+So from these results there are more women under 50 than over 50!
+
+
 
 (@) Can you create a subset that includes only women voters who lived on "Main" street (the street name contains "Main")? How many were there? # Hint: You'll need to search within the street column. This will require a bit of googling and reading documentation. Look for a function that will allow you to search within a column.
 ```{r}
+result <- BostonWomenVoters[grepl("Main", BostonWomenVoters$Street.of.Residence.on.April.1), ]; print(nrow(result))
 
 ```
 
 (@) Using subsetting techniques, can you find the occupations of the five oldest women in the dataset? What were they?
-```{r}
+
 # Hint: You might need to order the data first, then subset
 # The order() function could be helpful
+```{r}
+print(BostonWomenVoters[order(-BostonWomenVoters$Age, na.last = TRUE), ][1:5, "Occupation"])
+
 ```
