@@ -12,7 +12,7 @@
 
 library(tidyverse)   # includes ggplot2 and lubridate (for dates)
 
-bellevue <- read_csv("data/bellevue_for_R.csv", show_col_types = FALSE)
+  bellevue <- read_csv("data/bellevue_for_R.csv", show_col_types = FALSE)
 glimpse(bellevue)
 # The first column (...1) is just row numbers saved by R. You can ignore it.
 
