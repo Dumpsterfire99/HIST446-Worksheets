@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 3: Markup Bodies"
 subtitle: "Decisions hidden inside a database"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "9/30/26"
 format:
   html:
     theme: cosmo
@@ -150,7 +150,7 @@ with_ads <- function(some_runaways) {
 
 (@) Open the `events` and the `ads` tables and identify which columns were used in the code above. To the best of your ability, describe what is happening in the code and how it used specific columns from those tables.
 
-> 
+> It is drawing and selecting spesific cullums to inclued.
 
 (@) Now give the new function a test. Write a code below that: 1) filters the `runaways` table to only runaways who have ran before; and 2) joins the filtered subset to their respective advertisement transcriptions.
 
@@ -164,9 +164,9 @@ with_ads <- function(some_runaways) {
 :::
 
 ```{r}
+ran_before <- runaways %>% filter(ran_before == "true")
 
-
-
+r_before_with_ads <- ran_before %>% with_ads()
 ```
 
 ------------------------------------------------------------------------
@@ -179,22 +179,25 @@ Count the frequency of terms in the `racial_description` field.
 ```{r}
 runaways %>% count(racial_description, sort = TRUE) %>% head(8)
 ```
+It is about 8261 terms used, that were not undefined or not provided. 
 
 Count the frequency of values in the `min_age` field.
 ```{r}
 runaways %>% count(min_age, sort = TRUE) %>% head(10)
 ```
+9 - 40 is the values, and there is 1 undefined value. 
 
 Count the frequency of values in the `literacy` field.
 ```{r}
 enslaved_people %>% count(literacy, sort = TRUE)
 ```
+Of all of the values and the frequency that is being used the NOT_PROVIDED is being used the most with 23388. And close behind it is Undefined is then the second coming up with 4018.
 
 FOTM has several ways of saying "nothing here": an empty cell (`NA` in R), `{undefined value}`, `NOT_PROVIDED`, and, in number fields, `-9`. All of these mean "blank cell", but for different scenarios.
 
 (@) Discuss with your pair or group and answer: what might be the difference between `NOT_PROVIDED` and `{undefined value}`? Why does it matter which one a cell has?
 
->
+> Not provided is either about them not giving the records or they just didnt do it. Where as undefined is that they documented but they could not determine so they just make it a undifined. 
 
 Now measure how full each field is. The function below counts, for every column you give it, the share of rows with an actual value. `pivot_longer()` is new: it stacks all the columns into two, `field` and `value`, so we can count them all at once.
 
@@ -508,7 +511,6 @@ Save the tables you made. They're small and made from FOTM by you, so they go in
 
 ```{r}
 write_csv(my_kinship_decisions, "output/exercise2/kinship_decisions.csv")
-write_csv(my_term_decisions,    "output/exercise2/racial_description_decisions.csv")
 ```
 
 Before you commit, click on Render to create a new .html file of this exercise. Then, look at the **Changes** list in GitHub Desktop. You should see this file, the new html file, and `output/exercise2/` (two JSON histories, `relationships_clean.csv`, and two decision tables). If anything from `data/FOTM/` appears there, **stop and ask me** before committing.
