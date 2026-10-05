@@ -124,7 +124,7 @@ for (p in 1:length(presidents)) {
 
 (@) Why does this work? What does `length()` do and why do we use it on `presidents`?
 
-> 
+> why this works is because the code is being very speific. presidents are a good list, as we have lots of presidents that we can list as well as we can number them in order. 
 
 (@) Create a character vector that contains the title of each of your classes this semester. Can you write a `for` loop that prints out "I am enrolled in" and the name of each of your classes? ("I am enrolled in History 200", "I am enrolled in History 446".....etc). 
 
