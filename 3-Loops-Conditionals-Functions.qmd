@@ -1,7 +1,7 @@
 ---
 title: "Worksheet 3: Loops, Conditionals and Functions"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "10/5/26"
 format:
   html:
     df-print: paged
