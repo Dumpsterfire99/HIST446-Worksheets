@@ -131,16 +131,20 @@ for (p in 1:length(presidents)) {
 **Hint:** You'll need a function to combine the output and some text of your choosing inside the function.
 
 ```{r}
-
+print(paste("I am enrolled in", my_classes))
 ```
 
 (@) Now let's practice with data. Create a loop that prints out the first 5 titles from the gayguides dataset. Hint: You'll need to loop from 1 to 5 and access `gayguides$title[i]`
 ```{r}
-
+for (i in 1:5) {
+  print(gayguides$title[i])
+}
 ```
 
 (@) Can you modify the above loop to only print titles that contain the word "Bar"? (Hint: use grepl() to search for "Bar" in the title)
 ```{r}
+bar_guides <- gayguides[grepl("bar", gayguides$title, ignore.case = TRUE), ]
+
 ```
 
 Sometimes we want our loop to terminate itself early. There are two statements that help us do that: 
@@ -172,7 +176,7 @@ for (i in 1:10) {
 
 (@) What happened here? Why did the loop only print 3 and 4? 
 
->
+>The function is only showing the numbers that are keeping in line with the function. As well as it will skip all that doe not meet it! 
 
 (@) What if we wanted to loop through the gay guides data? Can you write a loop that iterates through the cities in the Gay Guides data and returns the title of any location in Greenville? 
 ```{r}
@@ -187,6 +191,17 @@ for (i in 1:10) {
 **Hint 1:** Create a counter to track how many you've found.
 **Hint 2:** The city appears in the data as 'New York City'.
 ```{r}
+
+for (i in 1:nrow(gayguides)) {
+  
+  
+  if (gayguides$city[i] == "Greenville") {
+    
+    # Print the title of that location
+    print(gayguides$title[i])
+    
+  }
+}
 
 ```
 
@@ -234,6 +249,7 @@ historyStudents <- function(studentname, class) {
 
 (@) Can you run this function? 
 ```{r}
+historyStudents <- function(studentname, class) paste0("Hello ", studentname, ". Welcome to ", class, "!")
 
 ```
 
@@ -249,10 +265,14 @@ Let's start with a simpler function to build confidence.
 
 (@) Write a function called `double()` that takes a number and returns that number multiplied by 2.
 ```{r}
+double <- function(x) x * 2
 ```
 
 (@) Write a function called `greet()` that takes a name and returns "Hello, [name]!" 
 ```{r}
+greet <- function(name) paste0("Hello, ", name, "!")
+
+
 ```
 
 Now let's try something more complex:
@@ -292,7 +312,7 @@ grade(75)
 GeorgeWashington <- grade(60)
 ```
 
->
+>because he got a D and it will not show a D gare. the grading scale is 90's A 80's B 70's C and 60's D.
 
 
 Here's a more complex example: 
@@ -315,11 +335,19 @@ gg.locations("San Diego", 1980)
 (@) Write a function that accepts two arguments: a state and a year. The function should pull all the locations in that state and year from the gayguides dataset and return a statement that says "Found a location in [state] called [location title]". (Where [state] is the state and [location title] is the title of a location in that year and state.)
 
 ```{r}
+find_locations <- function(chosen_state, chosen_year) {
+  
+  matches <- gayguides[gayguides$state == chosen_state & gayguides$Year == chosen_year, ]
+  
+ 
+  paste0("Found a location in ", chosen_state, " called ", matches$title)
+}
 
 ```
 
 (@) Use the Boston Women Voters dataset (BostonWomenVoters). Write a function that accepts the name of an occupation. Your function should return new dataframe that includes the records for every voter listed with that occupation.  
 ```{r}
+filter_occupation <- function(job) BostonWomenVoters[BostonWomenVoters$occupation == job, ]
 
 ```
 
@@ -332,12 +360,17 @@ gg.locations("San Diego", 1980)
    - Counts how many locations are in that state
    - Returns a statement like "There are XX locations in [state]"
 ```{r}
+count_by_state <- function(state_abbrev) paste0("There are ", sum(gayguides$state == state_abbrev), " locations in ", state_abbrev)
+
 ```
 
 (@) Can you modify your function to also accept a year as a second argument? So `count_by_state("SC", 1975)` would count locations in SC in 1975.
 ```{r}
+count_by_state <- function(state_abbrev, choose_year) paste0("There are ", sum(gayguides$state == state_abbrev & gayguides$Year == choose_year), " locations in ", state_abbrev, " in ", choose_year)
+
 ```
 
 (@) Reflection: How do loops, conditionals, and functions work together? Give an example from this worksheet where you used all three.
 
->
+>The way that this is all working together is to help creat ways to be as spesiific when looking at datasets. It is to make our lives easier as the machine is doing all the heavy liftingfor us. and if something is not what we want  then we can filter it out and or skip it. 
+Like the Example when we are uing the gay guides to fine information in the year title and city. and so we need to be as spesific as possible and set it up to get the most acurate function and data that we can. 
