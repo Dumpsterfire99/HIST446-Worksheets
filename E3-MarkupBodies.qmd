@@ -226,7 +226,7 @@ fill_rates <- function(table) { # a function that takes one table as its input
 
 Now use the new function for `runaways`:
 ```{r}
-runaways %>%
+runaway %>%
   select(
     racial_description,
     min_age,
@@ -328,7 +328,7 @@ hard_cases %>% filter(left_kinship == "slave") %>% pull(transcription) %>% cat(s
 
 (@) Discuss with your pair or group: Who is John Halsey, and why is he in a table of *runaways* and a table of *kinship*? What does this data point tell you about the difference between the database's categories and the historical relationship?
 
->
+>The relationship iis that when one thing hapens another can be added to other data. If someone runs away they can also have an advertisment put in the newspaper telling of the runaway!
 
 (@) Now let's print all the ads from hard_cases to examine the other five rows:
 ```{r}

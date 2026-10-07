@@ -1,7 +1,7 @@
 ---
 title: "In-Class Exercise: Building a Database of Muncie Directories"
 subtitle: "From a printed source, to a table, to related tables"
-author: ""
+author: "Alex Matney"
 date: ""
 format:
   html:
@@ -60,11 +60,11 @@ Now look at the **scan** of the same page available online by clicking on this U
 
 (@) Compare the scan with the text above. Name **three** things a reader of the scan knows that the OCR text gets wrong or loses.
 
->
+>One thing I can already tell is that it looses the orginization of diffrent discripors that waould help orginize it. It also seems very crammed together, not bad thing but it makes it just a bit harder to read and understand. They also add things Like it says french steam works and it dont see that on the page as well as it adds a bunch of diffrent little things that add nothing.
 
 (@) Find the page in this city directory volume that explains the directory's abbreviations (the table of contents on Page 7 tells you where). What does an asterisk before a name mean?
 
->
+>It can mean a many diffent things from streat to location to race,  or if in parenthasis they are the wifes name. The direction in the city or the street name, and the buissnesses that are there in that area. 
 
 ### Where did the sample table you loaded with `read_csv()` come from?
 
