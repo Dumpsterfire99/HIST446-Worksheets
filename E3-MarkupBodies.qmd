@@ -287,11 +287,11 @@ Click the ▼ on `RUNAWAY_RELATIONSHIP LEFT_KINSHIP` → **Facet** → **Text fa
 
 (@) How many choices does each facet list in total?
 
->
+>100 in each 
 
 (@) Some of the "choices" look identical. Click one of the identical-looking pairs: what is actually different about them?
 
->
+>They are a diffrent person, as I am looking at the data the two identicals are two seprate people. One is their father and then the next is their mother. They are idenical but diffrent as they are a diffrent relative. 
 
 ---------------------------------------
 ### Cleaning the easy fixes
@@ -304,7 +304,7 @@ The following fixes don't change meaning or interpretation, so we'll do these fi
 
 (@) How many choices does each facet list now?
 
->
+>10
 
 ### The hard fixes
 

@@ -49,9 +49,10 @@ _If you had no issues or challenges, mark the checkbox below and delete the Chal
 
 **Describe your attempts to problem-solve the issue:**
 Attempts:
-1. > 
-2. >
-3. >
+1. > I read and re-read all that i was looking at, but was struggling to know what i was looking at.
+2. >Then I asked Google and just kind of spit balled and was getting no progress. 
+3. >I had a breakthrough just now as i was writing it down as it was no making sense and I used Google to look at the names and the wives and occupation that helped me understand what i was looking at and to creat a function for it.
+I had been looking at this for hours and i am so happy that when I wast typing it out helped me as it made me realize that i had to ask better questions and be more specific.
 
 **Which resources did you consult?:**
 
@@ -60,31 +61,33 @@ _Replace the placeholder text in brackets ``[   ]`` for specific details of your
 - [ ] Documentation for [package-or-function]
 - [ ] Stack Overflow: [describe-what-you-searched-for]
 - [ ] Course materials: [which-ones]
-- [ ] Class discussion
+- [X] Class discussion
 - [ ] Office hours
-- [ ] Other: [describe]
-
+- [X] Other: [describe]
+Google, Wanted it explained a little differently for me and walk me through what i was seeing and what I am to understand from it.
 **Did you figure out a solution?**
->
+>Yes I did, as it was about how i was identifing the people and how i am to add the names after.
 
 **What did you learn from this challenge?**
->
+>Sometimes writing down and talking ot out can lead to a breakthrough that you were looking for.
+
 
 
 ### Challenge 2:
 
 **Brief Descriptive Title:**
->
+>I could not remember what we had done for one of the in class work.
 
 **Describe the task or problem:**
->
+>It was not recognising things and pakgages that i know we had done and put in. As well i could not remmember the spesific comand for e4.
+
 
 **Describe the error, confusion, or obstacle you encoutered:**
->
+> the error was things like %>% could not be found so I tried the nect chunk and i got similiar things happening.
 
 **Describe your attempts to problem-solve the issue:**
 Attempts:
-1. > 
+1. > I went back to the top and started re running the chunks that i had already done so that I could re-trace my steps.
 2. >
 3. >
 
@@ -94,16 +97,16 @@ _Replace the placeholder text in brackets ``[   ]`` for specific details of your
 
 - [ ] Documentation for [package-or-function]
 - [ ] Stack Overflow: [describe-what-you-searched-for]
-- [ ] Course materials: [which-ones]
-- [ ] Class discussion
+- [X] Course materials: [which-ones] I used pictures of what was written on the whiteboard.
+- [X] Class discussion
 - [ ] Office hours
 - [ ] Other: [describe]
 
 **Did you figure out a solution?**
->
+>yes, After retracing my steps and I reinstalled the packages like in the chunks that were given to us in statrt oof the document.
 
 **What did you learn from this challenge?**
->
+>Sometimes to go foward you have to go back. I am glad that i went back and looked and retraced and re ran the chuncks from before. 
 
 _Repeat the template above for any additional challenges you would like to include here._
 

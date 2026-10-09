@@ -138,12 +138,13 @@ A few rules I followed, all from our readings on spreadsheets and databases:
 Notice: if you look closely, the mark before Calvin Davis's name is clear in the scan, but not as clear in the OCR text.
 
 ```{r}
+by_hand <- by_hand %>% add_row(entry = 2, surname = "Davis", given = "Calvin", spouse = "Spouse Name", asterisk = TRUE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "Mark clear in scan.") %>% add_row(entry = 4, surname = "Davis", given = "Cecil F.", spouse = "Spouse Name", asterisk = FALSE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "After Carl 1") %>% add_row(entry = 5, surname = "Davis", given = "Chas", spouse = "Spouse Name", asterisk = FALSE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "After Carl 2") %>% add_row(entry = 6, surname = "Davis", given = "Chas", spouse = "Spouse Name", asterisk = FALSE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "After Carl 3") %>% add_row(entry = 7, surname = "Davis", given = "Chas", spouse = "Spouse Name", asterisk = FALSE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "After Carl 4") %>% add_row(entry = 8, surname = "Davis", given = "Chas", spouse = "Spouse Name", asterisk = FALSE, occupation = "Occupation", employer = "Employer", address = "Address", housing = "res", notes = "After Carl 5")
 
 ```
 
 (@) Your table has no row for Naomi, Pauline, or Anna, the wives in parentheses, and no column for a second job (look a few lines further down at Chas. S. Davis). What did the directory's publisher decide about women in these households? What could you do differently when building this table?
 
->
+> make a whole column for the women of these men or spouses. 
 
 ------------------------------------------------------------------------
 
