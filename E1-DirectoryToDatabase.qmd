@@ -2,7 +2,7 @@
 title: "In-Class Exercise: Building a Database of Muncie Directories"
 subtitle: "From a printed source, to a table, to related tables"
 author: "Alex Matney"
-date: ""
+date: "10/9/26"
 format:
   html:
     df-print: paged
@@ -84,13 +84,13 @@ if (is.null(live)) {
 
 (@) Notice the object that was fetched from the JSON request `live`. It's a list 66 elements. Go back to the scan of Page 206 at the DMR website. Can you figure out what those 66 elements refer to?
 
->
+> I think that it is all of the data and discriptors in it. 
 
 The repository answered with a whole record for this one page. In a future worksheet, you'll write a loop that does this for many pages, politely. By the end of this code, we saved just one field, `full`, as `live_text`. 
 
 (@) Which three of the 66 fields became the three columns in `pages`?
 
->
+>text, pageptr, pagetitle. 
 
 (@) Run the code chunk below to create a one-row table from the `live` object that has the same columns as the `pages` table and the values for page 206.
 ```{r}
@@ -107,7 +107,7 @@ identical(live_206, as_tibble(page_206)) # check to see if both are identitical
 
 (@) Explain each line in the code above. Remember: You can type `?function()` in your console to access the documentation for any of the functions used above. For example, write `?trimws` and see what happens.
 
-> 
+> Null is making something void, tibble does quite a lot as it repairs names, and a many didffrent functions. Identical will be creating an identical function using other functions.
 
 ------------------------------------------------------------------------
 
@@ -200,7 +200,7 @@ by_machine %>%
 
 (@) Compare the machine's rows for your six people with your hand transcription. Where does the machine disagree with you? Look especially at Calvin Davis, whose entry begins with an odd mark in the OCR text, and at Chas. S. Davis, whose entry runs over three lines.
 
->
+>Calvin,carl s, hobart.
 
 (@) `count()` tallies rows. Run the code below.
 
@@ -211,7 +211,7 @@ by_machine %>% count(is.na(address))
 (@) What share of entries has no `address`? Use `filter(is.na(address))`).
 
 ```{r}
-
+filter(is.na(address))
 ```
 
 (@) Pick two of the entries without addresses and try to explain why the parser failed.
@@ -295,19 +295,19 @@ residences %>%
 
 (@) Seven people "live" at `same`. Write down what you'd do with those rows in a real project: delete them, look up the business address from each entry, or something else? What would each choice do to a count of shared addresses?
 
->
+>It is an appartment building. Id leave it, but id make sure that its clear that its an appartment building.
 
 (@) The same surname at the same address suggests a family, but the database only **records** a shared address. Pick one shared address from `shared`. What might the people there be to each other? What could you check (another page, another year of the directory, the census) to find out? What does the `housing` column (`res` vs. `rooms` vs. `bds`) add?
 
->
+>Well its important to make sure that if one person is related to the other that we make sure that it is know that they are related and if they are living under the same roof. 
 
 (@) Freedom on the Move stores names in their own table (`enslaved_person_name`), with a column `is_alias`, because one person can appear under several names. Our `people` table has one name per person, and wives appear only inside parentheses. Sketch (in words) one more table you'd add to our database to fix one of these problems. What would one row be, and what would its columns be?
 
->
+>We can make a column that is spesifically for the spouses of the people in our list. 
 
 (@) Our `asterisk` column comes from a racial classification the publisher printed next to some names. A database makes a column like that very easy to count, map, and join. Name one question a historian could responsibly ask with it, and one way it could be misused.
 
->
+>It can be used to make data to better understand, but the missuse is that it can be used to segrigate information that should not be segrigated. 
 
 ------------------------------------------------------------------------
 
