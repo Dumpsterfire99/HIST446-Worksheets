@@ -1,9 +1,9 @@
 # Weekly Learning Log
 
-* **Student Name:**
-* **Week Number:**
-* **Today's Date**
-* **Topic(s):**
+* **Student Name:*Alex Matney*
+* **Week Number:*7*
+* **Today's Date*10/9/26*
+* **Topic(s):*e1-e4 and work sheet 3*
 
 -------------------
 
@@ -16,22 +16,22 @@ _Empty brackets (``[ ]``) work as checkboxes. You should type an X inside empty 
 ## What I Worked On This Week
 
 **Assignment(s):**
-- [ ] Coding Worksheet
-- [ ] Other
+- [ 3] Coding Worksheet
+- [ e1-4] Other
 
 If you marked Coding Worksheet, what is the worksheet number? 
 
->
+>3
 
 If you marked Other, describe the work you've done this week.
 
->
+>The in class worksheets that we did not finish in class. 
 
 
 
 ## Challenges & Problem-Solving
 _Fill this out for each major challenge you've faced this week. A challenge can be anything, from a concept you were trying to understand better or a tool that you're experimenting with but did not work as you expected, to a coding issue or a roadblock in your research project._
-
+Forgetting and just remmemboring all of the functions that we learn. I could not fuigure out the page 206 as the codding there was just a bit harder than what I thought it would be I skipped it but got the rest of the assignment done.
 _If you had no issues or challenges, mark the checkbox below and delete the Challenges section from your log._
 
 [ ] I had no major challenges or issues this week.
@@ -39,13 +39,13 @@ _If you had no issues or challenges, mark the checkbox below and delete the Chal
 ### Challenge 1:
 
 **Brief Descriptive Title:**
->
+>Reading the document and not getting confused of what i was looking at.
 
 **Describe the task or problem:**
->
+>Speifing a person and their spouse after the name carl.
 
 **Describe the error, confusion, or obstacle you encoutered:**
->
+>I just know of adding people but I just had a problem reading it and understaning what i was looking at.
 
 **Describe your attempts to problem-solve the issue:**
 Attempts:
