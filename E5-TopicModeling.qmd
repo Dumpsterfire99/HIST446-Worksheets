@@ -1,8 +1,8 @@
 ---
 title: "In-Class Exercise 5, Part 2: Topic Modeling *The American City*"
 subtitle: "A first topic model in R"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "10/21/26"
 format:
   html:
     theme: cosmo
@@ -83,7 +83,7 @@ nrow(tokens)
 
 **Q1. Discuss with your pair or group:** How many words does R count in the corpus? Compare that with the total Voyant gave you in Part 1 of `E5-TextAnalysis.qmd`. If the numbers differ, why might two programs count the "same" words differently?
 
->
+>So the number i close enough. Like tokenising rules will cause it to be more or less sometimes. 
 
 ------------------------------------------------------------------------
 
@@ -108,7 +108,7 @@ chunk_info
 
 **Q2. Discuss with your pair or group:** How many documents do we have now? What do we gain from chunking, and what might we lose?
 
->
+>1,476 that is the amount that we have now. By getting very spesific we are getting more acurate data, but we may be loosing some context. Structural issues will get worse. we are also losing some things like articals in the middle or belnding it gives the computer info of where the unfo and words are showing up more. we are gaining what is talked about the most. 
 
 ------------------------------------------------------------------------
 
@@ -123,7 +123,7 @@ Like we did on Monday with Voyant's stopword list, we need to make decisions abo
 
 ```{r}
 # Chunk 6
-my_stopwords <- c("ing", "tion", "con", "ment")   # word fragments from line breaks; add your own
+my_stopwords <- c("ing", "tion", "con", "ment" , "american", "new", "city" , "york")   # word fragments from line breaks; add your own
 
 words <- tokens %>%
   anti_join(stop_words, by = "word") %>%
@@ -136,7 +136,7 @@ words %>% count(word, sort = TRUE)
 
 **Q3. Discuss with your pair or group:** Look at the 50 most frequent words above. Which junk tokens from Voyant (Part 3 of `E5-TextAnalysis.qmd`) and which others you see now would you add to `my_stopwords`? Is there a reason you can think of to remove any real words from this corpus? Which ones and why?
 
->
+>American, city, New York because its the place where it was published. 
 
 ------------------------------------------------------------------------
 
@@ -159,7 +159,7 @@ dtm
 
 **Q4. Discuss with your pair or group:** How many documents and how many different words (terms) are in the matrix? The output says most cells are empty (that's what **sparsity** means). Why would most words be missing from most 1,000-word chunks?
 
->
+>Some of the chunks will be using more words far more than other ones will be using. A chuk can only have a certain number of words, so depending on what is being asked in a cell will them really make it vary. 
 
 ------------------------------------------------------------------------
 
@@ -208,16 +208,16 @@ top_terms %>%
 ```{r}
 # Chunk 10
 topic_labels <- c(
-  "1" = "",
-  "2" = "",
-  "3" = "",
-  "4" = "",
-  "5" = "",
-  "6" = "",
-  "7" = "",
-  "8" = "",
-  "9" = "",
-  "10" = ""
+  "1" = "Government",
+  "2" = "Light",
+  "3" = "Paving",
+  "4" = "Ground",
+  "5" = "State/company",
+  "6" = "Economics",
+  "7" = "School",
+  "8" = "Local Government",
+  "9" = "Enviormen",
+  "10" = "Public San"
 )
 ```
 
@@ -283,7 +283,7 @@ Some passages use the racial and ethnic language of 1915. As in Exercises 3 and 
 
 **Q6. Discuss with your pair or group:** Pick **two** topics and read their top three chunks. Did reading confirm your label from Part 6, or change it? Update `topic_labels` above if it changed.
 
->
+>Yeah they all kind of worked and mached with what my lables where thinking. 
 
 ------------------------------------------------------------------------
 
