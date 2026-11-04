@@ -1,8 +1,8 @@
 ---
 title: "Exercise 7: Mapping Muncie, 1925"
 subtitle: "Base layers, small multiples, and interactive maps in R"
-author: ""
-date: ""
+author: "Alex Matney"
+date: "11/4/26"
 format:
   html:
     theme: cosmo
@@ -251,7 +251,7 @@ ggsave("output/exercise7/muncie_1925_layers.png", layers_map, width = 8, height 
 
 **Q1. Discuss with your partner:** imagineRio shows how Rio de Janeiro's streets, buildings, and shoreline changed over time, drawn from historical maps and views. What would it take to build that kind of map for Muncie in 1925? Using Knowles's chapter, name one thing a historian could do with that map in a GIS that we can't do with Chunk 7's map.
 
-> 
+> It would take a lot of looking at old maps, as well as information and historical documents. Photos, a map from 1925, and more layors. 
 
 ------------------------------------------------------------------------
 
